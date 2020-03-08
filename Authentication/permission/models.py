@@ -14,10 +14,10 @@ class PermissionModel(models.Model):
         default=calendar.timegm(time.gmtime()))  
 
     def save(self,*args,**kwargs):
-   	self.time_modified=calendar.timegm(time.gmtime())
-   	if self._state.adding is True:
-   		self.time_created=calendar.timegm(time.gmtime())
-   	super(PermissionModel,self).save(*args,**kwargs)  
+        self.time_modified=calendar.timegm(time.gmtime())
+        if self._state.adding is True:
+            self.time_created=calendar.timegm(time.gmtime())
+        super(PermissionModel,self).save(*args,**kwargs)  
 
     class Meta:
         db_table = 'permission'

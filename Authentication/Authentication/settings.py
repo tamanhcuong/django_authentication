@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'role',
+    'permission',
+    'user'
 ]
 
 MIDDLEWARE = [
@@ -76,8 +79,13 @@ WSGI_APPLICATION = 'Authentication.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+      'ENGINE': 'django.db.backends.mysql',
+      'NAME': 'authwithtoken_cuong',
+      'USER': 'root',
+      'PASSWORD': 'm1tkh!u1234',
+      'HOST': '35.202.140.24',
+      'PORT': '8806',
+      'OPTIONS':{'charset':'utf8mb4'}
     }
 }
 

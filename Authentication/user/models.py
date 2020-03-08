@@ -21,10 +21,10 @@ class UserModel(models.Model):
     # link table
     #permissions = models.ManyToManyField(PermissionModel)
     def save(self,*args,**kwargs):
-   	self.time_modified=calendar.timegm(time.gmtime())
-   	if self._state.adding is True:
-   		self.time_created=calendar.timegm(time.gmtime())
-   	super(UserModel,self).save(*args,**kwargs)
+        self.time_modified=calendar.timegm(time.gmtime())       
+        if self._state.adding is True:
+            self.time_created=calendar.timegm(time.gmtime())
+        super(UserModel,self).save(*args,**kwargs)
 
     class Meta:
         db_table = 'user'
