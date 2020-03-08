@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'role',
     'permission',
-    'user'
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -87,6 +87,15 @@ DATABASES = {
       'PORT': '8806',
       'OPTIONS':{'charset':'utf8mb4'}
     }
+}
+
+# jason web token
+# https://simpleisbetterthancomplex.com/tutorial/2018/12/19/how-to-use-jwt-authentication-with-django-rest-framework.html
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
 }
 
 
